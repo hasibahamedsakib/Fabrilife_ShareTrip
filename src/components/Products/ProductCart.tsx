@@ -1,6 +1,6 @@
 import { TProduct } from "@/types/types.product";
 import React, { useState } from "react";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiMinus } from "react-icons/fi";
 import QuickViewModal from "./QuickViewModal";
 import AddToCart from "@/components/Button/AddToCart/AddToCart";
 import disCountBadge from "@/assets/discount-banner.png";
@@ -31,7 +31,7 @@ const ProductCart: React.FC<TProduct> = ({
             backgroundImage: `url(${disCountBadge})`,
           }}
         >
-          ৳ {discountAmount}
+          <FiMinus size={12} className="mb-1 -ml-[8px]" /> ৳ {discountAmount}
         </div>
       )}
 
@@ -57,7 +57,7 @@ const ProductCart: React.FC<TProduct> = ({
           />
           {/* Quick View Button */}
           <button
-            className="bg-blend-saturation bg-white/30 backdrop-blur-md hover:bg-success  text-white px-4 py-2 shadow flex items-center justify-center gap-2 w-[185px] h-8 mx-auto rounded-md border-[1.5px] border-white/30 hover:border-success"
+            className="bg-blend-saturation bg-white/30 backdrop-blur-md hover:bg-success  text-white px-4 py-2 shadow flex items-center justify-center gap-2 w-[150px] sm:w-[185px] h-8 mx-auto rounded-md border-[1.5px] border-white/30 hover:border-success"
             onClick={handleQuickView}
           >
             <FiEye />

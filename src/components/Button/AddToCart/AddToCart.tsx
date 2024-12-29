@@ -31,7 +31,7 @@ const AddToCart = ({
     <div className="mt-4 flex justify-between items-center ">
       {!isInCart ? (
         <button
-          className={`w-[185px] h-8 mx-auto  ${
+          className={`w-[150px] sm:w-[185px] h-8 mx-auto  ${
             isModal
               ? "bg-success"
               : "bg-white/30 backdrop-blur-md hover:bg-success"
@@ -43,7 +43,7 @@ const AddToCart = ({
         </button>
       ) : (
         <div
-          className={`w-[185px] h-8 mx-auto  flex items-center justify-between gap-2  ${
+          className={`w-[150px] sm:w-[185px] h-8 mx-auto flex items-center justify-between gap-2  ${
             isModal
               ? "bg-success"
               : "bg-white/30 backdrop-blur-md hover:bg-success"
@@ -52,7 +52,7 @@ const AddToCart = ({
           <button className=" px-2 py-1 " onClick={handleRemoveFromCart}>
             <RiDeleteBin6Line size={16} />
           </button>
-          <span className="text-sm">
+          <span className="text-[12px] sm:text-sm">
             {productInCart ? `${productInCart.quantity} Added in Cart` : ""}
           </span>
           <button className=" px-2 py-1 " onClick={handleAddToCart}>
