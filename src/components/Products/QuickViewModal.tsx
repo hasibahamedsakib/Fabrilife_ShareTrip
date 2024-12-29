@@ -54,7 +54,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
 
               <p className="text-success text-base font-medium font-Murecho flex items-center mt-2">
                 Discount Amount: <TbCurrencyTaka size={22} />{" "}
-                {discountAmount.toLocaleString("en-US")}
+                {(discountAmount || 0).toLocaleString("en-US")}
               </p>
               <p className="text-primary text-xl font-medium font-Murecho flex items-center ">
                 Current Price: <TbCurrencyTaka size={22} />{" "}
