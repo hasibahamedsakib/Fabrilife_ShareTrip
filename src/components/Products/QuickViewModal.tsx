@@ -24,23 +24,25 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
   } = product;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
+      <div className="bg-[#ebe6e6] rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">{title}</h2>
+          <h2 className="tex-txl md:text-2xl font-bold text-justify">
+            {title}
+          </h2>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-700"
+            className="text-gray-500 hover:text-red-700 border-2 border-gray-500 hover:border-red-600 p-1 rounded-full transition-all duration-300"
           >
-            <FiX size={24} />
+            <FiX size={20} />
           </button>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <img
             src={thumbnail}
             alt={title}
-            className="w-full md:w-1/2 rounded"
+            className="w-2/3 mx-auto sm:w-full md:w-1/2  border-2 border-success p-2 rounded-md"
           />
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between md:w-1/2">
             <div>
               <p className="text-secondary-700 text-sm font-normal leading-5">
                 Brand: {brand}
