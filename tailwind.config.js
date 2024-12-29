@@ -12,9 +12,11 @@ export default {
         },
         success: "#03a629",
       },
-
+      screens: {
+        "3xl": "1600px",
+      },
       fontFamily: {
-        Murecho: ["Murecho", "serif"],
+        Manrope: ["Manrope", "cursive"],
       },
     },
   },

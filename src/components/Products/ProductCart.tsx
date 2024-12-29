@@ -1,6 +1,7 @@
 import { TProduct } from "@/types/types.product";
 import React, { useState } from "react";
 import { FiEye, FiMinus } from "react-icons/fi";
+import { TbCurrencyTaka } from "react-icons/tb";
 import QuickViewModal from "./QuickViewModal";
 import AddToCart from "@/components/Button/AddToCart/AddToCart";
 import disCountBadge from "@/assets/discount-banner.png";
@@ -31,7 +32,9 @@ const ProductCart: React.FC<TProduct> = ({
             backgroundImage: `url(${disCountBadge})`,
           }}
         >
-          <FiMinus size={12} className="mb-1 -ml-[8px]" /> ৳ {discountAmount}
+          <FiMinus size={12} className="mb-1 -ml-[8px]" />
+          <TbCurrencyTaka size={16} className="mb-1" />
+          <p className="mb-1"> {discountAmount}</p>
         </div>
       )}
 
@@ -73,11 +76,12 @@ const ProductCart: React.FC<TProduct> = ({
           <p className="text-secondary-800 text-base font-medium">{title}</p>
         </div>
         <div className="flex items-center">
-          <p className="text-primary text-xl font-medium font-Murecho">
-            ৳ {price - (discountAmount || 0)}
+          <p className="text-primary text-xl font-medium font-Murecho flex items-center ">
+            <TbCurrencyTaka size={22} />{" "}
+            {(price - (discountAmount || 0)).toLocaleString("en-US")}
           </p>
           <p className="text-secondary-600 text-sm font-normal line-through ml-2">
-            ৳ {price}
+            ৳ {price.toLocaleString("en-US")}
           </p>
         </div>
       </div>
@@ -91,7 +95,7 @@ const ProductCart: React.FC<TProduct> = ({
             title,
             brand,
             price,
-            discountPercentage: discountAmount,
+            discountAmount,
             description,
             rating,
           }}

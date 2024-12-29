@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .Container {
-  @apply w-full sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1200px] 2xl:w-[1610px]  px-2 md:px-4  mx-auto;
+  @apply w-full sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1200px] 2xl:w-[1305px] 3xl:w-[1620px] px-2 md:px-4 mx-auto;
 }

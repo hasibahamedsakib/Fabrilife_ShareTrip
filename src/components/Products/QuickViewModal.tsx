@@ -2,6 +2,7 @@ import React from "react";
 import { TProduct } from "@/types/types.product";
 import { FiX } from "react-icons/fi";
 import AddToCart from "../Button/AddToCart/AddToCart";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 interface QuickViewModalProps {
   product: TProduct;
@@ -24,7 +25,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
   } = product;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-      <div className="bg-[#ebe6e6] rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
+      <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 md:w-2/3 lg:w-1/2">
         <div className="flex justify-between items-center mb-4">
           <h2 className="tex-txl md:text-2xl font-bold text-justify">
             {title}
@@ -44,17 +45,20 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
           />
           <div className="flex flex-col justify-between md:w-1/2">
             <div>
+              <p className="text-secondary-800 text-xl md:text-2xl font-semibold leading-7">
+                {title}
+              </p>
               <p className="text-secondary-700 text-sm font-normal leading-5">
                 Brand: {brand}
               </p>
-              <p className="text-secondary-800 text-base font-semibold leading-7">
-                {title}
+
+              <p className="text-success text-base font-medium font-Murecho flex items-center mt-2">
+                Discount Amount: <TbCurrencyTaka size={22} />{" "}
+                {discountAmount.toLocaleString("en-US")}
               </p>
-              <p className="text-primary text-lg font-medium mt-2">
-                ৳ {discountAmount}
-              </p>
-              <p className="text-secondary-600 text-sm font-normal line-through">
-                ৳ {price % 1 ? price.toFixed(2) : price}
+              <p className="text-primary text-xl font-medium font-Murecho flex items-center ">
+                Current Price: <TbCurrencyTaka size={22} />{" "}
+                {(price - (discountAmount || 0)).toLocaleString("en-US")}
               </p>
               <p className="text-secondary-700 text-sm font-normal mt-2">
                 Rating: {rating} / 5
