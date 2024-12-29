@@ -18,7 +18,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
     title,
     brand,
     price,
-    discountPercentage,
+    discountAmount,
     description,
     rating,
   } = product;
@@ -49,10 +49,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
                 {title}
               </p>
               <p className="text-primary text-lg font-medium mt-2">
-                ৳{" "}
-                {discountPercentage % 1
-                  ? discountPercentage.toFixed(2)
-                  : discountPercentage}
+                ৳ {discountAmount}
               </p>
               <p className="text-secondary-600 text-sm font-normal line-through">
                 ৳ {price % 1 ? price.toFixed(2) : price}
@@ -71,7 +68,7 @@ const QuickViewModal: React.FC<QuickViewModalProps> = ({
               title={title}
               brand={brand}
               price={price}
-              discountPercentage={discountPercentage}
+              discountAmount={discountAmount}
               isModal={true}
             />
           </div>

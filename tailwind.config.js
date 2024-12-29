@@ -10,7 +10,7 @@ export default {
           700: "#77818C",
           800: "#1A2B3D",
         },
-        success: "#03A629",
+        success: "#03a629",
       },
 
       fontFamily: {

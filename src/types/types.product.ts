@@ -3,7 +3,8 @@ export type TProduct = {
   title: string;
   brand: string;
   price: number;
-  discountPercentage: number;
+  discountPercentage?: number;
+  discountAmount?: number;
   thumbnail: string;
   quantity?: number;
   description?: string;

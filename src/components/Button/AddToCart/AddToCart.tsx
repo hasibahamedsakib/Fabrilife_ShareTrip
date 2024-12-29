@@ -11,7 +11,7 @@ const AddToCart = ({
   title,
   brand,
   price,
-  discountPercentage,
+  discountAmount,
   isModal,
 }: TProduct) => {
   const dispatch = useAppDispatch();
@@ -20,9 +20,7 @@ const AddToCart = ({
   const isInCart = cartItems.some((item) => item.id === id);
 
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({ id, thumbnail, title, brand, price, discountPercentage })
-    );
+    dispatch(addToCart({ id, thumbnail, title, brand, price, discountAmount }));
   };
   const handleRemoveFromCart = () => {
     dispatch(removeFromCart(id));
