@@ -2,11 +2,15 @@ import React from "react";
 import ProductCart from "@/components/Products/ProductCart";
 import { useGetProductsQuery } from "@/redux/service/api";
 import { TProduct } from "@/types/types.product";
+import PreLoader from "@/components/Loader/PreLoader";
+import ErrorComponent from "@/components/Error/ErrorComponent";
 
 const CartContainer: React.FC = () => {
   const { data, isLoading, isError } = useGetProductsQuery();
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error loading products</div>;
+
+  if (isLoading) return <PreLoader />;
+  if (isError) return <ErrorComponent />;
+
   const products = data?.products || [];
 
   return (
