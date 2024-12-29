@@ -35,7 +35,7 @@ const AddToCart = ({
             isModal
               ? "bg-success"
               : "bg-white/30 backdrop-blur-md hover:bg-success"
-          } text-white px-4 py-2  shadow flex items-center justify-center gap-2 text-sm rounded-md`}
+          } text-white px-4 py-2  shadow flex items-center justify-center gap-2 text-sm rounded-md transition-all duration-300`}
           onClick={handleAddToCart}
         >
           <FiShoppingCart />

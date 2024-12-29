@@ -91,6 +91,7 @@ import React, { useState } from "react";
 import { FiEye } from "react-icons/fi";
 import QuickViewModal from "./QuickViewModal";
 import AddToCart from "@/components/Button/AddToCart/AddToCart";
+import disCountBadge from "@/assets/discount-banner.png";
 
 const ProductCart: React.FC<TProduct> = ({
   id,
@@ -115,7 +116,7 @@ const ProductCart: React.FC<TProduct> = ({
         <div
           className="absolute top-4 -left-[10px] bg-no-repeat bg-contain bg-center text-white text-sm font-medium flex items-center justify-center w-20 h-8 z-10"
           style={{
-            backgroundImage: `url('/src/assets/discount-banner.png')`,
+            backgroundImage: `url(${disCountBadge})`,
           }}
         >
           ৳ {discountAmount}
