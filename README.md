@@ -30,7 +30,7 @@ Fabrilife ShareTrip is a React application built with Vite, TypeScript, and Tail
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/yourusername/fabrilife-sharetrip.git
+   git clone https://github.com/hasibahamedsakib/Fabrilife_ShareTrip.git
    cd fabrilife-sharetrip
    ```
 
