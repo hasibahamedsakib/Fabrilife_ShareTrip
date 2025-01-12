@@ -1,9 +1,12 @@
-import React from "react";
-import ProductCart from "@/components/Products/ProductCart";
+import React, { lazy } from "react";
+// import ProductCart from "@/components/Products/ProductCart";
 import { useGetProductsQuery } from "@/redux/service/api";
 import { TProduct } from "@/types/types.product";
-import PreLoader from "@/components/Loader/PreLoader";
 import ErrorComponent from "@/components/Error/ErrorComponent";
+
+// implement lazy loading...
+const ProductCart = lazy(() => import("@/components/Products/ProductCart"));
+const PreLoader = lazy(() => import("@/components/Loader/PreLoader"));
 
 const CartContainer: React.FC = () => {
   const { data, isLoading, isError } = useGetProductsQuery();

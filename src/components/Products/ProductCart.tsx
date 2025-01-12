@@ -1,10 +1,16 @@
 import { TProduct } from "@/types/types.product";
-import React, { useState } from "react";
+import React, { lazy, useState } from "react";
 import { FiEye, FiMinus } from "react-icons/fi";
 import { TbCurrencyTaka } from "react-icons/tb";
-import QuickViewModal from "./QuickViewModal";
-import AddToCart from "@/components/Button/AddToCart/AddToCart";
+// import QuickViewModal from "./QuickViewModal";
+// import AddToCart from "@/components/Button/AddToCart/AddToCart";
 import disCountBadge from "@/assets/discount-banner.png";
+
+// add lazy loading
+const AddToCart = lazy(() => import("@/components/Button/AddToCart/AddToCart"));
+const QuickViewModal = lazy(
+  () => import("@/components/Products/QuickViewModal")
+);
 
 const ProductCart: React.FC<TProduct> = ({
   id,
